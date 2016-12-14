@@ -7,8 +7,11 @@ describe 'StationsService' do
       radius = 6
       results = StationsService.new.find_stations(zipcode, radius)
 
-      # expect(results.count).to eq(10)
       expect(results.class).to eq(StationsService)
+      expect(results).to have_key(:station_name)
+      expect(results).to have_key(:street_address)
+      expect(results).to have_key(:fuel_type_code)
+      expect(results).to have_key(:access_days_time)
     end
   end
 end
