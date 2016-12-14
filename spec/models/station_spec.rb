@@ -15,5 +15,13 @@ describe 'Stations' do
       expect(station).to respond_to(:fuel_type)
       expect(station).to respond_to(:access_times)
     end
+    it "can sort by distance" do
+      zipcode = 80203
+      radius = 6
+      stations = Station.create_stations(zipcode, radius)
+      station = stations.first
+
+      expect(station.name).to eq("UDR")
+    end
   end
 end
