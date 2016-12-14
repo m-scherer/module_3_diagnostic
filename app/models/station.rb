@@ -18,7 +18,7 @@ class Station
                   station[:distance],
                   station[:access_days_time],
                   )
-    end
+    end[0..9]
   end
 
 end
