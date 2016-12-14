@@ -20,12 +20,12 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-require 'vcr'
-
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/vcr_cassettes"
-  config.hook_into :webmock
-end
+# require 'vcr'
+#
+# VCR.configure do |config|
+#   config.cassette_library_dir = "spec/vcr_cassettes"
+#   config.hook_into :webmock
+# end
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
