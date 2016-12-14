@@ -1,3 +1,10 @@
 <h1>Stations:</h1>
 
-<%= @zip %>
+<% @stations.each do |station| %>
+  <%= station.name %>
+  <%= station.address %>
+  <%= station.distance %>
+  <%= station.fuel_type %>
+  <%= station.access_times %>
+  <br>
+<% end %>

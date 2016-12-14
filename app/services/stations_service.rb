@@ -1,4 +1,4 @@
-class Stations::StationsService
+class StationsService
 
   def initialize
     @conn = Faraday.new(:url => 'https://developer.nrel.gov') do |faraday|
@@ -12,7 +12,8 @@ class Stations::StationsService
     response = conn.get '/api/alt-fuel-stations/v1/nearest.json', {
                               api_key: ENV["nrel_api_key"],
                               location: zipcode,
-                              radius: radius
+                              radius: radius,
+                              fuel_type: "ELEC,LPG"
                               }
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)
