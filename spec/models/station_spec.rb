@@ -24,4 +24,13 @@ describe 'Stations' do
       expect(station.name).to eq("UDR")
     end
   end
+  context '#top_ten_stations' do
+    it "can find the top ten stations" do
+      zipcode = 80203
+      radius = 6
+      stations = Station.top_ten_stations(zipcode, radius)
+
+      expect(stations.count).to eq(10)
+    end
+  end
 end

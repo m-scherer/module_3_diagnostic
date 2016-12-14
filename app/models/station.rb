@@ -18,7 +18,11 @@ class Station
                   station[:distance],
                   station[:access_days_time],
                   )
-    end[0..9]
+    end
+  end
+
+  def self.top_ten_stations(zipcode, radius)
+    create_stations(zipcode, radius)[0..9]
   end
 
 end
